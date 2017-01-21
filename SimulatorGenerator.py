@@ -244,13 +244,9 @@ class SimulatorGenerator(object):
         timestamp = 0
         urls = set()
         self.bigLambda = alpha
-        for i in range(5):     
+        for filename in os.listdir(self.logFile):
             self.eventList = []
-            f = None
-            if os.path.exists(self.logFile+'/trace_detail_'+str(i+1)):
-                f = open(self.logFile+'/trace_detail_'+str(i+1))
-            else:
-                continue
+            f = open(filename)
             ## Read the first line 
             line = f.readline()
             while line:
