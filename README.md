@@ -1,14 +1,14 @@
 # PICN_simulation
-# written by Zeinab Zali 
-# April 2016
+ written by Zeinab Zali 
+ April 2016
 
-#requirements:
+#requirements
 python packages
 
-#Input files:
+#Input files
 you can download the trace files from http://ita.ee.lbl.gov/html/contrib/UCB.home-IP-HTTP.html. After downloading the trace compressed files, please generate The trace detail information using showtrace tool available in                         ftp://ita.ee.lbl.gov/software/UCB-home-IP.tools.tar.gz (gzcat <tracefile> | showtrace > trace_detail_file). Then place these files in a folder which is used in the execution and we explain about it in the next section.
 
-#Instructions for running the simulation:
+#Instructions for running the simulation
 - change the directory to PICN_simulation directory
 - execute command:
   $ python SimulatorExecution.py -p tracefiles_folder -c cache_policy -a availability_probability -r request_rate
@@ -25,7 +25,7 @@ you can download the trace files from http://ita.ee.lbl.gov/html/contrib/UCB.hom
   example execution command: 
   $ python SimulatorExecution.py -p UC_Berkeley_traces -c fully_redundant -a 90 -r 0.0005
   
-#Output files:
+#Output files
 All the output files are placed in the output folder in PICN_simulation folder. These files include all output diagrams and also info.txt file. The info file contains the simulation input and results statistics.
   
   
