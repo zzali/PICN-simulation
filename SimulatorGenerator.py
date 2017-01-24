@@ -246,7 +246,7 @@ class SimulatorGenerator(object):
         self.bigLambda = alpha
         for filename in os.listdir(self.logFile):
             self.eventList = []
-            f = open(filename + '/' + self.logFile)
+            f = open(self.logFile + '/' + filename)
             ## Read the first line 
             line = f.readline()
             while line:
