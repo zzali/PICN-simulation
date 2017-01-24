@@ -23,13 +23,14 @@ class Topology(object):
     #n_switches: number of switches for each local network
     def __init__(self, n_seekers, n_switches, n_hosts, seeker_neighbor_prob,
                  aliveProb, cache_policy):
-        if cache_policy=='full_redundant':
+        if cache_policy=='fully_redundant':
             self.register = self.register_fullRedundant
         elif cache_policy=='no_redundant':
             self.register = self.register_noRedundant
         else:
             self.register = self.register_popularityBased
         self.cache_policy = cache_policy
+        self.max_redundancy = 20
         self.clientIDs = dict()
         #self.arrivalTimes = IPs_timestamp
         self.aliveProb = aliveProb/float(100)
