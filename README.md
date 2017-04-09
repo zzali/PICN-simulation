@@ -1,4 +1,4 @@
-# PICN_simulation
+# PICN-simulation
  written by Zeinab Zali 
  April 2016
 
