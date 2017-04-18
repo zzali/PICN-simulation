@@ -2,21 +2,21 @@
  written by Zeinab Zali (z.zali@ec.iut.ac.ir)
  April 2016
 
-#requirements
+# requirements
 python packages
 
-#Input files
+# Input files
 
-#Berkeley trace files
+- Berkeley trace files
 you can download the trace files from http://ita.ee.lbl.gov/html/contrib/UCB.home-IP-HTTP.html. 
 After downloading the trace compressed files, please generate The trace detail information using showtrace tool available in ftp://ita.ee.lbl.gov/software/UCB-home-IP.tools.tar.gz (gzcat <tracefile> | showtrace > trace_detail_file). 
 Then put all the files in a single folder.
 
-#IRCache trace files
+- IRCache trace files
 We use IRCache 2007 trace files : http://imdc.datcat.org/collection/1-01J0-5=IRCache+traces+for+DITL+January,+2007. But unfortunately the download link is no more available. So please contact me at z.zali@ec.iut.ac.ir if you want the files.
 Then put all the files in a seperate folder than Berkeley trace files folder.
 
-#pre procesing the trace files
+- Preprocesing the trace files
 To generate the input files for simulation, execute:
 $python EventsProcessor.py -D dataset_name -p tracefiles_folder_path -d day
 -d option is only necessary for IRCache trace files which can be 9 or 10.
