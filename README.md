@@ -18,10 +18,11 @@ Then put all the files in a seperate folder than Berkeley trace files folder.
 
 - Preprocesing the trace files
 To generate the input files for simulation, execute:
-$python EventsProcessor.py -D dataset_name -p tracefiles_folder_path -d day
--d option is only necessary for IRCache trace files which can be 9 or 10.
 
-#Instructions for running the simulation
+$python EventsProcessor.py -D dataset_name -p tracefiles_folder_path -d day
+day is only necessary for IRCache trace files which can be 9 or 10
+
+# Instructions for running the simulation
 - change the directory to PICN_simulation directory
 - execute command:
   $ python SimulatorExecution.py -D dataset -d day -p tracefiles_folder -c cache_policy -a availability_probability -m cache_size -s central_proxy
@@ -39,7 +40,7 @@ $python EventsProcessor.py -D dataset_name -p tracefiles_folder_path -d day
   example execution command: 
   $ python SimulatorExecution.py -p UC_Berkeley_traces -c fully_redundant -a 90 -d 9
   
-#Output files
+# Output files
 All the output files are placed in the output folder in PICN-simulation folder. These files include all output diagrams and also info.txt file. The info file contains the simulation input and results statistics.
   
   
