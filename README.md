@@ -20,14 +20,15 @@ Then put all the files in a seperate folder than Berkeley trace files folder.
 To generate the input files for simulation, execute:
 
   $python EventsProcessor.py -D dataset_name -p tracefiles_folder_path -d day
+   Example: python EventsProcessor.py -D IRCache -p Dataset/IRCache/ -d 9
 
-day is only necessary for IRCache trace files which can be 9 or 10
+   day is only necessary for IRCache trace files which can be 9 or 10
 
 # Instructions for running the simulation
 - change the directory to PICN_simulation directory
 - execute command:
 
-    $ python SimulatorExecution.py -D dataset -d day -p tracefiles_folder -c cache_policy -a availability_probability -m cache_size -s central_proxy
+    $ python SimulatorExecution.py -D dataset -d day -p tracefiles_folder -c cache_policy -a availability_ratio -m cache_size -s central_proxy
   
   please replace the input arguments with proper values as below:
   + Dataset: Berkeley or IRCache
@@ -35,13 +36,14 @@ day is only necessary for IRCache trace files which can be 9 or 10
   + tracefiles_folder: the folder path containing input trace files. This folder should contain only the trace detail files                          which are generated from original trace files. You should place every trace file which you want to                            execute simulation for it in the tracefiles_folder. The simulation is executed for aggregated traffic                        of all the trace files in this folder. If you want to execute a simulation for a small trace file to                          evaluate the simulation code, use only the small 4 hour snippet of trace data available in UCB-Home-IP                        page. we already have put this sample file in UC_Berkeley_traces folder in PICN_simulation folder.
   
   + cache_policy: one of these policies: fully_redundant, no_redundant or popularity_based
-  + availability_probability: The availability probability of clients in percent
+  + availability_ratio: The availability ratio (1-100) of clients
   + cache_size: size of cache on each single client (KB)
   + proxy: yes or not. If it is yes a simulation for central proxy is also executed for Berkeley trace files or the results              will be compared with IRCache proxies for IRCache trace files
   
-  example execution command: 
+  example execution commands: 
   
-    $ python SimulatorExecution.py -p UC_Berkeley_traces -c fully_redundant -a 90 -d 9
+    $ python SimulatorExecution.py -D IRCache -d 9 -p Dataset/IRCache/ -c fully_redundant -a 90 -m 100000 -s yes
+    $ python SimulatorExecution.py -D Berkeley -p Dataset/Berkeley/ -c fully_redundant -a 100 -m 50000 -s no
   
 # Output files
 All the output files are placed in the output folder in PICN-simulation folder. These files include all output diagrams and also info.txt file. The info file contains the simulation input and results statistics.
